@@ -26,6 +26,9 @@
 *~
 .lia.cache
 .nia.cache
+.coq-native/
+RocqMakefile
+RocqMakefile.conf
 
 # Generated files for the smart contracts
 contracts/generated

@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "rocq-of-rust"
-version: "0.1"
+version: "dev"
 synopsis: "Rocq of Rust"
 description: """
 Formal verification for Rust by translation to the proof system Rocq
@@ -12,14 +12,17 @@ authors: [
 license: "MIT"
 homepage: "https://formal.land/docs/rocq-of-rust/introduction"
 bug-reports: "https://github.com/formal-land/rocq-of-rust/issues"
-dev-repo: "git+https://github.com/formal-land/rocq-of-rust.git"
+dev-repo: "git+https://github.com/theorem-labs/rocq-of-rust.git"
 depends: [
   "coq-coqutil"
-  "coq-hammer"
-  "rocq-core" {>= "9.0" & < "9.1"}
+  "coq-hammer-tactics"
+  "rocq-core" {>= "9.0" & < "9.4"}
   "rocq-smpl"
   "rocq-stdlib"
 ]
 build: [
-  [make]
+  ["bash" "-c" "cd RocqOfRust && ulimit -s unlimited && make -j%{jobs}%"]
+]
+install: [
+  ["make" "-C" "RocqOfRust" "install"]
 ]

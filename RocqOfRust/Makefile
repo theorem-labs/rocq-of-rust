@@ -1,4 +1,4 @@
-.PHONY: all clean clean-util distclean default watch generate jinja
+.PHONY: all clean clean-util distclean default watch generate jinja install
 
 VFILES := $(shell find -L . -name "*.v" | grep -v -f blacklist.txt | sort)
 JINJA_TEMPLATES := $(shell find -L . -name "*.v.jinja2" | sort)
@@ -23,6 +23,9 @@ MAKEROCQ := +$(MAKE) -f RocqMakefile
 
 all: RocqMakefile
 	$(MAKEROCQ) all
+
+install: RocqMakefile
+	$(MAKEROCQ) install
 
 clean-rocq: RocqMakefile
 	$(MAKEROCQ) clean

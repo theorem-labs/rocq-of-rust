@@ -1744,7 +1744,7 @@ Module any.
             const { intrinsics::type_id::<T>() }
         }
     *)
-    Definition of (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
+    Definition of_ (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
       match ε, τ, α with
       | [], [ T ], [] =>
         ltac:(M.monadic
@@ -1753,10 +1753,10 @@ Module any.
           |)))
       | _, _, _ => M.impossible "wrong number of arguments"
       end.
-    
-    Global Instance AssociatedFunction_of : M.IsAssociatedFunction.C Self "of" of.
+
+    Global Instance AssociatedFunction_of : M.IsAssociatedFunction.C Self "of" of_.
     Admitted.
-    Global Typeclasses Opaque of.
+    Global Typeclasses Opaque of_.
     
     (*
         fn as_u128(self) -> u128 {
