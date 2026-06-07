@@ -16,7 +16,7 @@ dev-repo: "git+https://github.com/theorem-labs/rocq-of-rust.git"
 depends: [
   "coq-coqutil"
   "coq-hammer-tactics"
-  "rocq-core" {>= "9.0" & < "9.4"}
+  "rocq-core" {>= "9.0" & < "9.4" | = "dev"}
   "rocq-smpl"
   "rocq-stdlib"
 ]
