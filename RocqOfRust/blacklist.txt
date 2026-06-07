@@ -24,3 +24,5 @@ move_sui/proofs
 move_sui/simulations
 # Legacy folder
 ./legacy/
+# Experimental files with universe issues in Rocq 9.2
+experiments/MonadExperiments.v

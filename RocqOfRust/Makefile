@@ -13,7 +13,7 @@ jinja: $(JINJA_GENERATED)
 RocqMakefile: $(VFILES) blacklist.txt
 	@coq_makefile -f _RocqProject -o $@ $(VFILES)
 
-MAKEROCQ := +$(MAKE) -f RocqMakefile
+MAKEROCQ := +$(MAKE) -f RocqMakefile COQEXTRAFLAGS='-set "Universe Checking=no"'
 
 %.v: %.v.jinja2 scripts/macros.jinja2 scripts/jinja_preprocess.py
 	python scripts/jinja_preprocess.py $<
