@@ -264,7 +264,7 @@ Module any.
             t == concrete
         }
     *)
-    Definition is (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
+    Definition is_ (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
       match ε, τ, α with
       | [], [ T ], [ self ] =>
         ltac:(M.monadic
@@ -314,9 +314,9 @@ Module any.
       | _, _, _ => M.impossible "wrong number of arguments"
       end.
     
-    Global Instance AssociatedFunction_is : M.IsAssociatedFunction.C Self "is" is.
+    Global Instance AssociatedFunction_is : M.IsAssociatedFunction.C Self "is" is_.
     Admitted.
-    Global Typeclasses Opaque is.
+    Global Typeclasses Opaque is_.
     
     (*
         pub fn downcast_ref<T: Any>(&self) -> Option<&T> {
@@ -767,7 +767,7 @@ Module any.
             <dyn Any>::is::<T>(self)
         }
     *)
-    Definition is (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
+    Definition is_ (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
       match ε, τ, α with
       | [], [ T ], [ self ] =>
         ltac:(M.monadic
@@ -807,9 +807,9 @@ Module any.
       | _, _, _ => M.impossible "wrong number of arguments"
       end.
     
-    Global Instance AssociatedFunction_is : M.IsAssociatedFunction.C Self "is" is.
+    Global Instance AssociatedFunction_is : M.IsAssociatedFunction.C Self "is" is_.
     Admitted.
-    Global Typeclasses Opaque is.
+    Global Typeclasses Opaque is_.
     
     (*
         pub fn downcast_ref<T: Any>(&self) -> Option<&T> {
@@ -1057,7 +1057,7 @@ Module any.
             <dyn Any>::is::<T>(self)
         }
     *)
-    Definition is (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
+    Definition is_ (ε : list Value.t) (τ : list Ty.t) (α : list Value.t) : M :=
       match ε, τ, α with
       | [], [ T ], [ self ] =>
         ltac:(M.monadic
@@ -1108,9 +1108,9 @@ Module any.
       | _, _, _ => M.impossible "wrong number of arguments"
       end.
     
-    Global Instance AssociatedFunction_is : M.IsAssociatedFunction.C Self "is" is.
+    Global Instance AssociatedFunction_is : M.IsAssociatedFunction.C Self "is" is_.
     Admitted.
-    Global Typeclasses Opaque is.
+    Global Typeclasses Opaque is_.
     
     (*
         pub fn downcast_ref<T: Any>(&self) -> Option<&T> {
