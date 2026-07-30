@@ -14,7 +14,7 @@ homepage: "https://formal.land/docs/rocq-of-rust/introduction"
 bug-reports: "https://github.com/formal-land/rocq-of-rust/issues"
 dev-repo: "git+https://github.com/theorem-labs/rocq-of-rust.git"
 depends: [
-  "coq-coqutil"
+  ("coq-coqutil" | "coq-fiat-crypto-with-bedrock")
   "coq-hammer-tactics"
   "rocq-core" {>= "9.0" & < "9.4" | = "dev"}
   "rocq-smpl"
